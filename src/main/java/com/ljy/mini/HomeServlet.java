@@ -19,13 +19,28 @@ public class HomeServlet extends HttpServlet {
 		
 		String number = request.getParameter("number");
 		
-		System.out.println("Client's number is" + number);
+		int result = Integer.parseInt(number)*5;
 		
-		int times = Integer.parseInt(number) * 5;
+		
+		
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
 		
 		PrintWriter write = response.getWriter();
 		
-		write.println("the result of 5times of number is" + times);
+		write.println("<!DOCTYPE html>"
+				+"<html lang = 'ko'>"
+				+"<head>"
+				+"<meta charset='UTF-8'>"
+				+"<title>servlet</title>"
+				+"<body>"
+				+"<h1>"
+				+"보내주신 숫자에 5를 곱한 결과는"
+				+ result
+				+"입니다."
+				+"</h1>"
+				+"</body>"
+				+"</html>");
 		
 	}
 
